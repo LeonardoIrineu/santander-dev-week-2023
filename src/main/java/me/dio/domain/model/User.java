@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 import java.util.List;
 
-@Entity(name = "td_user")
+@Entity(name = "tb_user")
 public class User {
 
     @Id
@@ -25,37 +25,12 @@ public class User {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<News> news;
 
-
-    public List<News> getNews() {
-        return news;
+    public Long getId() {
+        return id;
     }
 
-    public void setNews(List<News> news) {
-        this.news = news;
-    }
-
-    public List<Feature> getFeatures() {
-        return features;
-    }
-
-    public void setFeatures(List<Feature> features) {
-        this.features = features;
-    }
-
-    public Card getCard() {
-        return card;
-    }
-
-    public void setCard(Card card) {
-        this.card = card;
-    }
-
-    public Account getAccount() {
-        return account;
-    }
-
-    public void setAccount(Account account) {
-        this.account = account;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -66,13 +41,36 @@ public class User {
         this.name = name;
     }
 
-    public Long getId() {
-        return id;
+    public Account getAccount() {
+        return account;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setAccount(Account account) {
+        this.account = account;
     }
 
+    public Card getCard() {
+        return card;
+    }
+
+    public void setCard(Card card) {
+        this.card = card;
+    }
+
+    public List<Feature> getFeatures() {
+        return features;
+    }
+
+    public void setFeatures(List<Feature> features) {
+        this.features = features;
+    }
+
+    public List<News> getNews() {
+        return news;
+    }
+
+    public void setNews(List<News> news) {
+        this.news = news;
+    }
 
 }
